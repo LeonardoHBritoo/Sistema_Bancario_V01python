@@ -55,8 +55,3 @@ while True:
     else:#valores inválidos
         print("Resposta inválida")
     input("\nPressione enter para cotinuar...")
-    
-
-        
-
-    
