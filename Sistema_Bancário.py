@@ -19,7 +19,7 @@ Lista_depósitos = []
 Lista_saques = []
 limit_saques = 3
 def deposito(valor,/):
-    global Valor_em_conta
+    global Valor_em_conta # Declaração de variável como global
     if valor<=0:
         print("valor inválido")   
     else:
@@ -27,7 +27,7 @@ def deposito(valor,/):
         Lista_depósitos.append(F"R${valor:.2f}")
         print(f"Operação bem sucedida! Seu saldo atual é: R${Valor_em_conta}")
 
-def saque(*,qte_saques_restantes,Valor_em_conta):
+def saque(*,qte_saques_restantes,Valor_em_conta): # Especificando tipo de entrada de argumentos como parâmetro nomeado
     if qte_saques_restantes == 0:
         print("Limite diário de saques atingido") 
     else:
@@ -48,7 +48,7 @@ def saque(*,qte_saques_restantes,Valor_em_conta):
                     Lista_saques.append(f"R${valor_saque:.2f}")
     return Valor_em_conta               
 
-def extrato(Lista_depósitos,Lista_saques,/,*,Valor_em_conta):
+def extrato(Lista_depósitos,Lista_saques,/,*,Valor_em_conta):# Especificando tipos de entrada
     print("Seu Extrato".center(30,"#"))
     print(f"Seus depósitos: {Lista_depósitos}\nSeus Saques: {Lista_saques}\nSalto atual: R${Valor_em_conta:.2f}")
 
